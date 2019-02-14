@@ -1,0 +1,35 @@
+body {
+  font-size: 1.1em;
+  line-height: 1.6;
+  
+  background: red;
+}
+
+p {
+  margin: 0;
+}
+
+@media screen {
+  .footer {
+    display: none;
+  }
+}
+
+@media print {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    height: 0.5in;
+    padding-top: 0.17in;
+  }
+  .footer .curpage::before {
+    display: inline-block;
+    counter-increment: section;
+    content: counter(currentpage);
+  }
+}
+
+@page {
+  
+  overflow: visible;
+}
